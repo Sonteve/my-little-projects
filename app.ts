@@ -12,7 +12,6 @@ class Piano {
 
   private playSound(key: string) {
     const currentMelody = this.melodys[Number(key)];
-    console.log(currentMelody);
     if (!currentMelody.paused) {
       currentMelody.pause();
     }
@@ -24,11 +23,13 @@ class Piano {
       btn.addEventListener("click", (e: MouseEvent) => {
         const target = e.target as HTMLButtonElement;
         if (target.dataset && target.dataset.index) {
-          target.dataset.index && this.playSound(target.dataset.index);
+          this.playSound(target.dataset.index);
         }
       });
     });
   }
 }
 
-const piano = new Piano();
+window.addEventListener("DOMContentLoaded", () => {
+  const piano = new Piano();
+});
