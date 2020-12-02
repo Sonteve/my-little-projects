@@ -1,13 +1,11 @@
-/* const buttons = document.getElementsByTagName("button");
-const melodys = document.getElementsByTagName("audio"); */
-class Piano {
+export default class Piano {
   buttons: HTMLCollectionOf<HTMLButtonElement>;
   melodys: HTMLCollectionOf<HTMLAudioElement>;
 
   constructor() {
     this.buttons = document.getElementsByTagName("button");
     this.melodys = document.getElementsByTagName("audio");
-    this.initialize();
+    this.init();
   }
 
   private playSound(key: string) {
@@ -18,7 +16,7 @@ class Piano {
     currentMelody.play();
   }
 
-  private initialize() {
+  init() {
     Array.prototype.map.call(this.buttons, (btn: HTMLButtonElement) => {
       btn.addEventListener("click", (e: MouseEvent) => {
         const target = e.target as HTMLButtonElement;
@@ -29,7 +27,3 @@ class Piano {
     });
   }
 }
-
-window.addEventListener("DOMContentLoaded", () => {
-  const piano = new Piano();
-});

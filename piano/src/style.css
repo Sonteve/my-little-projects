@@ -1,0 +1,13 @@
+body {
+  background: lightblue;
+  color: tomato;
+}
+button {
+  outline: none;
+  background: none;
+  border: none;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
+  margin: 1rem;
+}
