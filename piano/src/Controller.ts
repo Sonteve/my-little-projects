@@ -2,8 +2,6 @@ import { scale, mediaPath } from "./utils/data";
 import Piano from "./Piano";
 
 export default class Controller {
-  /* buttons: HTMLButtonElement[];
-  audios: HTMLAudioElement[]; */
   constructor() {
     const buttonElements: HTMLButtonElement[] = scale.map((note, i) => {
       const button: HTMLButtonElement = document.createElement("button");
